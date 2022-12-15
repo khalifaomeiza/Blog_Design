@@ -58,15 +58,15 @@ nav {
   color:black;
 }
 
-/* .show-links {
-  height: 10rem;
-} */
-
 .hero{
   background-image: url(images/hero.jpg);
   background-size: cover;
   height: 500px;
 
+}
+.main{
+  display: grid; 
+  grid-template-columns: 1.4fr .6fr;
 }
 .recent-post{
   display: flex;
@@ -77,6 +77,9 @@ nav {
   text-align: center;
   padding: 2rem 0;
   line-height: 1.2rem;
+  text-transform: uppercase;
+  opacity: 0.65;
+  font-size: 0.7rem;
 }
 .post img{
   width: 80%;
@@ -90,9 +93,10 @@ nav {
   overflow: hidden;
   border: 1px solid rgba(128, 128, 128, 0.26);
   margin: 0px auto 40px auto;
+  margin-bottom: 40px;
   border-radius: 5px;
   height: 15rem;
-  width: 70%;
+  width: 90%;
   box-shadow: 2px 4px rgba(113, 106, 106, 0.101);
   background-color: #dbd8d436;
   
@@ -108,16 +112,111 @@ nav {
 }
 .post-text button{
   text-decoration: none;
-  color:  rgba(123, 65, 42, 0.913);
+  color: white;
   width: fit-content;
-  background-color: rgba(215, 193, 159, 0.596);
+  background-color: rgb(182, 71, 71);
   border-radius: 5px;
-  padding: 2px;
+  padding: 4px;
   border:transparent;
-  box-shadow:  2px 4px rgba(113, 106, 106, 0.101) ;
+  font-weight: 600;
+  box-shadow:  2px 1px rgba(113, 106, 106, 0.101) ; 
+}
+button:hover{
+  background-color: rgba(240, 16, 16, 0.41);
+  transition: all 0.2s ease;
+  
+}
+aside{
+  background-color: rgba(250, 235, 215, 0.309);
+  border-radius: 5px;
+  padding-left: 20px;
+  
+
+}
+.categories h3{
+  margin-top:5rem;
+  padding-bottom: 1rem;
+  text-transform: uppercase;
+  opacity: 0.75;
   
   
-}footer{
+}
+.category-list li{
+  list-style-type: none;
+  padding: 5px 0; 
+}
+.category-list li a{
+  text-decoration: none;
+  color: black;
+  
+}.category-list li a:hover,
+.category-list li a:target
+.category-list li a:focus
+{
+  background-color:  #cab6a2e9;
+  border-radius: 3px;
+  padding: 4px;  
+}
+.calendar-title{
+  padding:1.5rem 0 1rem 0;
+  opacity: 0.7;
+  
+  
+}
+.calendar-month{
+  font-size: .8rem;
+  text-align:left;
+  margin: 1rem 5rem 0 ; 
+}
+
+thead{
+  text-align: center;
+
+}
+
+th,td {
+  padding: 4px;
+}
+td:hover,
+td:target,
+td:focus {
+  cursor: context-menu;
+  border: 1px solid transparent;
+  border-radius: 25%;
+  background-color:  rgba(202, 182, 162, 0.913)
+
+}
+.recent-aside{
+  margin: 2rem 0 .5rem 0;
+}
+
+
+.caption h5{
+  margin-bottom: 3px;
+}
+.caption h6{
+  margin-bottom: 12px;
+  opacity: .60;
+}
+.feature-btn{
+  color:  white;
+  background-color:  rgb(182, 71, 71);
+  border-radius: 5px;
+  margin: .5rem 0;
+  padding: 4px;
+  border:transparent;
+  font-weight: 600;
+  box-shadow:  2px 1px rgba(113, 106, 106, 0.101) ; 
+
+}
+.feature img{
+  width: 80%;
+}
+
+
+
+
+footer{
   background-color: rgba(202, 182, 162, 0.913) ;
   display: grid;
   grid-template-columns: 1fr 1fr;
