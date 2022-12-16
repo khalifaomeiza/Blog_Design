@@ -124,6 +124,7 @@ nav {
 button:hover{
   background-color: rgba(240, 16, 16, 0.41);
   transition: all 0.2s ease;
+  transform: translateY(-2px)
   
 }
 aside{
@@ -211,6 +212,7 @@ td:focus {
 }
 .feature img{
   width: 80%;
+  border-radius: 5px;
 }
 
 

@@ -27,7 +27,7 @@ body {
   a:link,
   a:visited,
   a:active {
-    color:brown;
+    color:rgb(182, 71, 71);
     
     transition: all 0.2s ease;
   }
@@ -38,7 +38,7 @@ body {
   a:visited:hover,
   a:active:focus,
   a:active:hover {
-    color:rgba(163, 24, 24, 0.671) ;
+    color:rgb(182, 71, 71) ;
     transition: all 0.2s ease;
   }
   
@@ -122,7 +122,7 @@ body {
   input[type="submit"] {
     border: none;
     display: block;
-    background-color: brown;
+    background-color: rgb(182, 71, 71);
     color: #fff;
     font-weight: bold;
     text-transform: uppercase;
