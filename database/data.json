@@ -1,0 +1,44 @@
+[
+  {
+    "name": "entertainment",
+    "subscribers": 5000,
+    "description": "Get Latest news in the entertainment industry",
+    "posts": [
+      {
+        "postId": "1",
+        "title": "Peter Okoye Celebrates wife",
+        "author": "Mark Twain",
+        "body": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima dolorem id voluptates laboriosam placeat maxime quis eos pariatur. Quis tempore sapiente impedit eius repudiandae asperiores, ab recusandae beatae repellendus! Aperiam, corporis obcaecati atque debitis impedit veritatis excepturi illo eaque iste laboriosam eius dolorem eos natus accusantium consequuntur beatae pariatur dicta quaerat, assumenda exercitationem nobis animi? Perferendis accusantium assumenda vero iure odit, quod qui, unde distinctio labore ullam saepe doloribus ex! Nihil velit libero impedit doloremque in soluta id sapiente sit assumenda magni rem mollitia voluptas laboriosam provident ad a, est voluptatum. Nisi esse magnam qui earum dolor, repudiandae rerum quod?",
+        "image": "images/img1.jpg"
+      },
+      {
+        "postId": "2",
+        "title": "Uche marries Jumbo",
+        "author": "uchechukwu",
+        "body": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima dolorem id voluptates laboriosam placeat maxime quis eos pariatur. Quis tempore sapiente impedit eius repudiandae asperiores, ab recusandae beatae repellendus! Aperiam, corporis obcaecati atque debitis impedit veritatis excepturi illo eaque iste laboriosam eius dolorem eos natus accusantium consequuntur beatae pariatur dicta quaerat, assumenda exercitationem nobis animi? Perferendis accusantium assumenda vero iure odit, quod qui, unde distinctio labore ullam saepe doloribus ex! Nihil velit libero impedit doloremque in soluta id sapiente sit assumenda magni rem mollitia voluptas laboriosam provident ad a, est voluptatum. Nisi esse magnam qui earum dolor, repudiandae rerum quod?",
+        "image": "images/img2.jpg"
+      }
+    ]
+  },
+  {
+    "name": "news",
+    "subscribers": 5000,
+    "description": "Get Latest news in the entertainment industry",
+    "posts": [
+      {
+        "postId": "1",
+        "title": "Peter Okoye Celebrates wife",
+        "author": "Mark Twain",
+        "body": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima dolorem id voluptates laboriosam placeat maxime quis eos pariatur. Quis tempore sapiente impedit eius repudiandae asperiores, ab recusandae beatae repellendus! Aperiam, corporis obcaecati atque debitis impedit veritatis excepturi illo eaque iste laboriosam eius dolorem eos natus accusantium consequuntur beatae pariatur dicta quaerat, assumenda exercitationem nobis animi? Perferendis accusantium assumenda vero iure odit, quod qui, unde distinctio labore ullam saepe doloribus ex! Nihil velit libero impedit doloremque in soluta id sapiente sit assumenda magni rem mollitia voluptas laboriosam provident ad a, est voluptatum. Nisi esse magnam qui earum dolor, repudiandae rerum quod?",
+        "image": "images/img3.jpg"
+      },
+      {
+        "postId": "2",
+        "title": "Uche marries Jumbo",
+        "author": "uchechukwu",
+        "body": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima dolorem id voluptates laboriosam placeat maxime quis eos pariatur. Quis tempore sapiente impedit eius repudiandae asperiores, ab recusandae beatae repellendus! Aperiam, corporis obcaecati atque debitis impedit veritatis excepturi illo eaque iste laboriosam eius dolorem eos natus accusantium consequuntur beatae pariatur dicta quaerat, assumenda exercitationem nobis animi? Perferendis accusantium assumenda vero iure odit, quod qui, unde distinctio labore ullam saepe doloribus ex! Nihil velit libero impedit doloremque in soluta id sapiente sit assumenda magni rem mollitia voluptas laboriosam provident ad a, est voluptatum. Nisi esse magnam qui earum dolor, repudiandae rerum quod?",
+        "image": "images/img4.jpg"
+      }
+    ]
+  }
+]

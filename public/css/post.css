@@ -8,7 +8,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
-    background:linear-gradient(rgba(221, 197, 197, 0.75),rgba(212, 193, 193, 0.75)), url(images/img2.jpg);
+    background:linear-gradient(rgba(221, 197, 197, 0.75),rgba(212, 193, 193, 0.75)), url("../images/img2.jpg");
     background-size: cover;
 
 }

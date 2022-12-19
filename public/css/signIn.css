@@ -4,7 +4,7 @@
 }
 body {
     
-    background:linear-gradient(rgba(221, 197, 197, 0.75),rgba(212, 193, 193, 0.75)), url(images/img4.jpg);
+    background:linear-gradient(rgba(221, 197, 197, 0.75),rgba(212, 193, 193, 0.75)), url("../images/img4.jpg");
     background-color: transparent;
     font-size: 1.6rem;
     font-family: "lato", sans-serif;

@@ -6,7 +6,7 @@ body {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    background: linear-gradient(rgba(221, 197, 197, 0.85),rgba(212, 193, 193, 0.95)), url(images/img1.jpg);
+    background: linear-gradient(rgba(221, 197, 197, 0.85),rgba(212, 193, 193, 0.95)), url("../images/img1.jpg");
     background-size: cover;
     font-family: "lato", sans-serif;
   }

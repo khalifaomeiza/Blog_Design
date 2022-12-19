@@ -13,7 +13,7 @@
     />
 
     <!-- styles -->
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
     <nav>
@@ -23,19 +23,19 @@
         <!-- links -->
         <ul class="links">
           <li>
-            <a href="index.html">home</a>
+            <a href="/">home</a>
           </li>
           <li>
-            <a href="about.html">about</a>
+            <a href="/about">about</a>
           </li>
           <li>
-            <a href="categories.html">categories</a>
+            <a href="/categories">categories</a>
           </li>
           <li>
-            <a href="post.html">Post</a>
+            <a href="/post">Post</a>
           </li>
           <li>
-            <a href="signin.html">Admin</a>
+            <a href="/signin">Admin</a>
           </li>
         </ul>
 
@@ -78,6 +78,7 @@
     </nav>
     
     <section class="hero">
+      <!-- <img class="hero-img" src="images/hero.jpg" alt=""> -->
         
     </section>
 <section class="main">
@@ -88,52 +89,27 @@
         </h2>
     </div>
     <ul class="posts">
+      <% for (let post  of allPosts){%>
         <li class="post">
-            <div class="post-content">
-                <div class="post-text">
-                    <h3 class="post-title">
-                        Fashion Weekend
-                    </h3>
+          <div class="post-content">
+              <div class="post-text">
+                  <h3 class="post-title">
+                      <%=post.title%> 
+                  </h3>
 
-                    <p>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste aspernatur et neque alias in ullam modi facere ut dolor culpa totam placeat repellendus rerum, dolorum, a provident. Facere tenetur quam est sequi nostrum itaque maiores, cupiditate nisi, eos odio rerum.
-                    </p>
-                    <button>Read More</button>
-                </div>
-            </div>
-            <img src="images/img2.jpg" alt="">
+                  <p><%=post.body.slice(0,20)%></p>
+                  <button>Read More</button>
+              </div>
+          </div>
+          
+          <img src="<%=post.image%>" alt="">
+          
         </li>
-        <li class="post">
-            <div class="post-content">
-                <div class="post-text">
-                    <h3 class="post-title">
-                        Fashion Weekend
-                    </h3>
-
-                    <p>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste aspernatur et neque alias in ullam modi facere ut dolor culpa totam placeat repellendus rerum, dolorum, a provident. Facere tenetur quam est sequi nostrum itaque maiores, cupiditate nisi, eos odio rerum.
-                    </p>
-                    <button>Read More</button>
-                </div>
-            </div>
-            <img src="images/hero.jpg" alt="">
-        </li>
+      <%}%>
+        
+      
     </ul>
-    <li class="post">
-        <div class="post-content">
-            <div class="post-text">
-                <h3 class="post-title">
-                    Fashion Weekend
-                </h3>
-
-                <p>
-                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste aspernatur et neque alias in ullam modi facere ut dolor culpa totam placeat repellendus rerum, dolorum, a provident. Facere tenetur quam est sequi nostrum itaque maiores, cupiditate nisi, eos odio rerum.
-                </p>
-                <button>Read More</button>
-            </div>
-        </div>
-        <img src="images/hero.jpg" alt="">
-    </li>
+    
   </section>
   <aside>
     <div class="categories">
