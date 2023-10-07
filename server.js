@@ -21,10 +21,10 @@ app.get('/', function(req, res){
     res.render("index.ejs", {allPosts});
    
 });
-app.get('/createpost', function(req, res){
-    const date = new Date().toLocaleDateString();
-    console.log(date);
-});
+// app.get('/createpost', function(req, res){
+//     const date = new Date().toLocaleDateString();
+//     console.log(date);
+// });
 
 app.get('/post', function(req, res){
     res.render("post.ejs");
