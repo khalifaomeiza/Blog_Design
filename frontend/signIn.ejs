@@ -1,45 +1,78 @@
 <!DOCTYPE html>
-<html lang="en" >
-<head>
-  <meta charset="UTF-8">
-  <link rel="shortcut icon" href="media/icons/gologo.svg" type="image/x-icon">
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz@9..144&family=Lato&family=Poppins&display=swap" rel="stylesheet">
-  <link rel="shortcut icon" href="images/zahr.logo.png" type="image/x-icon">
-  <title>SignIn - zahr</title>  
-  <script src="https://kit.fontawesome.com/7ac3e717ae.js" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="css/signIn.css">
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>SignIn - zahr</title>
 
-</head>
-<body>
-<div id="login_form">
-  <a href="/">
-    <img src="images/logo.png" alt="zahr logo">
-  </a>
-  <!-- <h2>Login</h2> -->
-  <form id="form">
-    <p>
-    <input type="text" id="username" name="username" placeholder="Username" required>
-    <i class="validation">
-      <span></span>
-      <span></span>
-    </i>
-    </p>
-    <p>
-    <input type="email" id="email" name="email" placeholder="Email Address" required>
-    <i class="validation">
-      <span></span>
-      <span></span>
-    </i>
-    </p>
-    <p>
-    <input type="submit" id="login" value="Login">
-    </p>
-  </form>
-  <div id="signup_request">
-    <p>Not a member? <a href="/signup">Create Account</a><p>
-  </div>
-</div>
+		<!-- Favicon -->
+		<link rel="shortcut icon" href="images/zahr.logo.png" type="image/x-icon" />
 
-  
-</body>
+		<!-- Google Fonts -->
+		<link
+			href="https://fonts.googleapis.com/css2?family=Fraunces:opsz@9..144&family=Lato&family=Poppins&display=swap"
+			rel="stylesheet"
+		/>
+
+		<!-- Font Awesome -->
+		<script
+			src="https://kit.fontawesome.com/7ac3e717ae.js"
+			crossorigin="anonymous"
+		></script>
+
+		<!-- CSS -->
+		<link rel="stylesheet" href="css/signIn.css" />
+	</head>
+	<body>
+		<div id="login_form">
+			<!-- <h2>Login</h2> -->
+
+			<form id="form" action="/signin" method="POST">
+				<div class="home-redirect-action">
+					<a href="/">
+						<img src="images/logo.png" alt="zahr logo" />
+					</a>
+				</div>
+
+				<p class="form-group">
+					<label for="username" class="username label">Email</label>
+					<input
+						type="text"
+						id="email"
+						name="email"
+						placeholder="example@example.com"
+						required
+					/>
+					<i class="validation">
+						<span></span>
+						<span></span>
+					</i>
+				</p>
+
+				<p class="form-group">
+					<label for="password" class="password label">Password</label>
+					<input
+						type="password"
+						id="password"
+						name="password"
+						placeholder="Enter your password"
+						required
+					/>
+					<i class="validation">
+						<span></span>
+						<span></span>
+					</i>
+				</p>
+
+				<p class="form-group">
+					<input type="submit" id="login" value="Login" />
+				</p>
+			</form>
+
+			<div id="signup_request">
+				<p class="signup-text"
+					>Not a member? <a href="/signup">Create Account</a></p
+				>
+			</div>
+		</div>
+	</body>
 </html>

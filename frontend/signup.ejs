@@ -1,44 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="media/icons/gologo.svg" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz@9..144&family=Lato&family=Poppins&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" href="images/zahr.logo.png" type="image/x-icon">
-    <title>Sign Up to Zahr</title>
-    <link rel="stylesheet" href="css/signup.css">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="shortcut icon"
+			href="/images/zahr.logo.png"
+			type="image/x-icon"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Open+Sans|Roboto:400,700&display=swap"
+			rel="stylesheet"
+		/>
+		<title
+			><%= typeof title !== 'undefined' ? title : 'Sign Up to Zahr' %></title
+		>
+		<link rel="stylesheet" href="/css/signup.css" />
+	</head>
+	<body>
+		<div class="signupForm">
+			<form
+				id="signupForm"
+				class="form"
+				novalidate
+				action="/signup"
+				method="POST"
+			>
+				<a href="/"
+					><img
+						src="/images/logo.png"
+						alt="Zahr Logo"
+						onerror="this.onerror=null; this.src='/images/default-logo.png';"
+				/></a>
+				<h1 class="title">Sign up</h1>
 
-</head>
-<body>
-    <div class="signupForm">
-        <form action="" class="form">
-          <a href="/"><img src="images/logo.png" alt="index.html"></a>
-          <h1 class="title">Sign up</h1>
-    
-          <div class="inputContainer">
-            <input type="text" class="input" placeholder="a">
-            <label for="" class="label">Email</label>
-          </div>
-    
-          <div class="inputContainer">
-            <input type="text" class="input" placeholder="a">
-            <label for="" class="label">Username</label>
-          </div>
-    
-          <div class="inputContainer">
-            <input type="text" class="input" placeholder="a">
-            <label for="" class="label">Password</label>
-          </div>
-    
-          <div class="inputContainer">
-            <input type="text" class="input" placeholder="a">
-            <label for="" class="label">Confirm Password</label>
-          </div>
-    
-          <input type="submit" class="submitBtn" value="Sign up">
-        </form>
-      </div>
-</body>
+				<% if (typeof message !== 'undefined' && message) { %>
+				<div class="message <%= message.type %>"> <%= message.text %> </div>
+				<% } %>
+
+				<div class="inputContainer">
+					<input
+						type="email"
+						id="email"
+						name="email"
+						class="input"
+						placeholder=" "
+						required
+						value="<%= typeof email !== 'undefined' ? email : '' %>"
+						autocomplete="email"
+					/>
+					<label for="email" class="label">Email</label>
+					<% if (typeof errors !== 'undefined' && errors.email) { %>
+					<span class="error-message"><%= errors.email %></span>
+					<% } %>
+				</div>
+
+				<div class="inputContainer">
+					<input
+						type="text"
+						id="username"
+						name="username"
+						class="input"
+						placeholder=" "
+						required
+						pattern=".{3,50}"
+						value="<%= typeof username !== 'undefined' ? username : '' %>"
+						autocomplete="username"
+					/>
+					<label for="username" class="label">Username</label>
+					<% if (typeof errors !== 'undefined' && errors.username) { %>
+					<span class="error-message"><%= errors.username %></span>
+					<% } %>
+				</div>
+
+				<div class="inputContainer">
+					<input
+						type="password"
+						id="password"
+						name="password"
+						class="input"
+						placeholder=" "
+						required
+						pattern=".{8,}"
+						autocomplete="new-password"
+					/>
+					<label for="password" class="label">Password</label>
+					<% if (typeof errors !== 'undefined' && errors.password) { %>
+					<span class="error-message"><%= errors.password %></span>
+					<% } %>
+				</div>
+
+				<div class="inputContainer">
+					<input
+						type="password"
+						id="confirmPassword"
+						name="confirmPassword"
+						class="input"
+						placeholder=" "
+						required
+						autocomplete="new-password"
+					/>
+					<label for="confirmPassword" class="label">Confirm Password</label>
+					<% if (typeof errors !== 'undefined' && errors.confirmPassword) { %>
+					<span class="error-message"><%= errors.confirmPassword %></span>
+					<% } %>
+				</div>
+				<div class="redirectAndSignupBtn">
+					<div class="redirect">
+						<a href="/signin"> < Back to Sign In </a>
+					</div>
+					<button type="submit" class="submitBtn">Sign up</button>
+				</div>
+			</form>
+		</div>
+
+		<script>
+			// Simple client-side validation
+			document
+				.getElementById("signupForm")
+				.addEventListener("submit", function (event) {
+					const password = document.getElementById("password");
+					const confirmPassword = document.getElementById("confirmPassword");
+					if (password.value !== confirmPassword.value) {
+						event.preventDefault();
+						alert("Passwords do not match");
+					}
+				});
+		</script>
+	</body>
 </html>

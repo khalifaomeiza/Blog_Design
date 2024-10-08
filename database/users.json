@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1728359024371,
+    "email": "test@test.com",
+    "username": "khalifa",
+    "password": "$2b$10$THEiUgPo1WrjqAHWAQuJsea4lDSK8iaukljB7qqS9hOCAaSeaAm1."
+  },
+  {
+    "id": 1728362445676,
+    "email": "test1@test.com",
+    "username": "test1",
+    "password": "$2b$10$yX8IYaBtRlD4sW09wHVH1eUA9jge2PY3YGGgEUEC3EGRqG2TcJKKK"
+  },
+  {
+    "id": 1728362533201,
+    "email": "test2@test.com",
+    "username": "test2",
+    "password": "$2b$10$qIEhmPhLOP7m1ZpwrexiFOEAbtvxXGd82BB4tZ5tASYuWRb3NAofi"
+  }
+]
