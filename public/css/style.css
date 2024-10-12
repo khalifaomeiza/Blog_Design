@@ -16,12 +16,16 @@ nav {
 }
 
 .navbar {
-	max-width: 1170px;
 	margin: 0 auto;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	padding: 1rem;
+	position: fixed;
+	background: #fff;
+	min-width: 100%;
+	min-height: 82px;
+	z-index: 100;
 }
 
 .logo {
@@ -75,9 +79,14 @@ nav {
 }
 
 .hero {
-	background-image: url("../images/hero.jpg");
+	background-image: url(../images/hero.jpg);
 	background-size: cover;
+	background-repeat: no-repeat;
 	height: 500px;
+	position: relative;
+	top: 82px;
+	margin-bottom: 82px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 .hero-img {
 	width: 100%;
@@ -86,9 +95,9 @@ nav {
 .main {
 	display: flex;
 	flex-wrap: wrap;
-	gap: 2rem;
+	gap: 4rem;
 	width: 100%;
-	padding: 6rem 3rem;
+	padding: 6rem 2.5rem;
 }
 
 .recent-post {
@@ -198,7 +207,7 @@ aside {
 .calendar {
 	background-color: #fff;
 	border-radius: 8px;
-	padding: 2rem;
+	padding: 2rem 1rem;
 	/* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
 	margin: 30px 0px;
 }
@@ -457,5 +466,127 @@ td.selected {
 
 	.footer {
 		margin: 1rem; /* Reduced margin for smaller screens */
+	}
+	@media screen and (max-width: 480px) {
+		.navbar {
+			padding: 0.5rem;
+		}
+
+		.logo {
+			height: 40px;
+		}
+
+		.nav-toggle {
+			font-size: 1.2rem;
+		}
+
+		.hero {
+			height: 300px;
+		}
+
+		.hero-img {
+			height: 300px;
+		}
+
+		.main {
+			padding: 2rem 2rem;
+		}
+
+		.post-heading h2 {
+			font-size: 1.5rem;
+		}
+
+		.posts {
+			grid-template-columns: 1fr;
+		}
+
+		.post img {
+			height: 150px;
+		}
+
+		.post-title {
+			font-size: 1rem;
+		}
+
+		.post-excerpt {
+			font-size: 0.8rem;
+		}
+
+		.read-more {
+			padding: 0.3rem 0.8rem;
+			font-size: 0.8rem;
+		}
+
+		aside {
+			padding: 1rem;
+		}
+
+		.calendar {
+			padding: 1rem;
+		}
+
+		.calendar-header {
+			align-items: flex-start;
+		}
+
+		.calendar-nav {
+			margin-top: 0.5rem;
+		}
+
+		th,
+		td {
+			padding: 0.2rem;
+			font-size: 0.7rem;
+		}
+
+		.date-search input,
+		.date-search button {
+			font-size: 0.8rem;
+		}
+
+		.caption h5 {
+			font-size: 0.9rem;
+		}
+
+		.caption h6 {
+			font-size: 0.7rem;
+		}
+
+		.feature-btn {
+			padding: 0.3rem 0.8rem;
+			font-size: 0.8rem;
+		}
+
+		.footer {
+			margin: 0.5rem;
+		}
+
+		.footer-content {
+			padding: 1rem;
+		}
+
+		.footer-section h2 {
+			font-size: 1.2rem;
+		}
+
+		.footer-section p,
+		.footer-section ul {
+			font-size: 0.8rem;
+		}
+
+		.social-icons a {
+			font-size: 1rem;
+		}
+	}
+
+	/* lazy loading */
+	.lazy-image {
+		width: 100%;
+		height: auto;
+		background-color: #f0f0f0;
+		transition: opacity 0.3s;
+	}
+	.lazy-image.loaded {
+		opacity: 1;
 	}
 }
