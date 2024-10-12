@@ -6,6 +6,7 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const fs = require("fs");
 const cookieParser = require("cookie-parser");
+const livereload = require("connect-livereload");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -15,6 +16,7 @@ app.use(express.static(path.join(__dirname, "public"))); // Serve static files f
 app.use(express.json()); // Add middleware to parse JSON bodies
 app.use(express.urlencoded({ extended: true })); // Add middleware to parse URL-encoded bodies
 app.use(cookieParser()); // Add middleware to parse cookies
+app.use(livereload()); // Include connect-livereload middleware
 
 app.set("view engine", "ejs");
 app.set("views", "frontend");
@@ -34,8 +36,14 @@ app.get("/", function (req, res) {
 			allPosts?.push(post);
 		}
 	}
-	res.render("index.ejs", { allPosts });
+	// Sort posts by date descending and select the top 3 as recent posts
+	const recentPosts = allPosts
+		.sort((a, b) => new Date(b.date) - new Date(a.date))
+		.slice(0, 3);
+
+	res.render("index.ejs", { allPosts, recentPosts });
 });
+
 app.get("/signin", function (req, res) {
 	res.render("signin.ejs");
 });

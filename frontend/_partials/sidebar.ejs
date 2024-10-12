@@ -1,0 +1,68 @@
+<!-- views/partials/sidebar.ejs -->
+<aside>
+	<!-- Categories -->
+	<div class="categories">
+		<h3>Categories</h3>
+		<ul class="category-list">
+			<li><a href="#">Lifestyle</a></li>
+			<li><a href="#">Fashion</a></li>
+			<li><a href="#">Entertainment</a></li>
+			<li><a href="#">Style</a></li>
+			<li><a href="#">Other</a></li>
+		</ul>
+	</div>
+
+	<!-- Calendar -->
+	<div class="calendar">
+		<h4 class="calendar-title">BLOG CALENDAR</h4>
+		<div class="calendar-header">
+			<div class="calendar-nav">
+				<button id="prevMonth">&lt;</button>
+				<button id="nextMonth">&gt;</button>
+			</div>
+			<h5 id="currentMonth"></h5>
+			<div class="calendar-nav">
+				<button id="prevYear">&lt;&lt;</button>
+				<button id="nextYear">&gt;&gt;</button>
+			</div>
+		</div>
+		<table>
+			<thead>
+				<tr>
+					<th>Mon</th>
+					<th>Tue</th>
+					<th>Wed</th>
+					<th>Thu</th>
+					<th>Fri</th>
+					<th>Sat</th>
+					<th>Sun</th>
+				</tr>
+			</thead>
+			<tbody id="calendarBody"> </tbody>
+		</table>
+		<div class="date-search">
+			<input type="date" id="dateInput" />
+			<button id="searchDate">Search Posts</button>
+		</div>
+	</div>
+
+	<!-- Recent Posts in Sidebar -->
+	<div class="recent-aside">
+		<h4>RECENT POSTS</h4>
+		<% recentPosts.forEach(post => { %>
+		<div class="caption">
+			<h5><a href="/post/<%= post.id %>"><%= post.title %></a></h5>
+			<h6 class="author">
+				<%= post.date %> | BY <strong><%= post.author %></strong>
+			</h6>
+		</div>
+		<% }) %>
+	</div>
+
+	<!-- Featured Content -->
+	<div class="feature">
+		<img src="/images/img1.jpg" alt="Featured Image" />
+		<p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+		<a href="#" class="feature-btn">View More</a>
+	</div>
+</aside>

@@ -1,0 +1,17 @@
+<section class="recent-post">
+	<div class="post-heading">
+		<h2>Recent Posts</h2>
+	</div>
+	<ul class="posts">
+		<% allPosts.forEach(post => { %>
+		<li class="post">
+			<img src="/<%= post.image %>" alt="<%= post.title %>" />
+			<div class="post-content">
+				<h3 class="post-title"><%= post.title %></h3>
+				<p class="post-excerpt"><%= post.body.slice(0, 100) %>...</p>
+				<a href="/post/<%= post.id %>" class="read-more">Read More</a>
+			</div>
+		</li>
+		<% }) %>
+	</ul>
+</section>
