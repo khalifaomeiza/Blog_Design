@@ -80,13 +80,12 @@ nav {
 
 .hero {
 	background-image: url(../images/hero.jpg);
-	background-size: cover;
+	background-size: contain;
 	background-repeat: no-repeat;
-	height: 500px;
 	position: relative;
+	height: 500px;
 	top: 82px;
 	margin-bottom: 82px;
-	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 .hero-img {
 	width: 100%;
