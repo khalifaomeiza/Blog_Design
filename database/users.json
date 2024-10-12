@@ -16,5 +16,11 @@
     "email": "test2@test.com",
     "username": "test2",
     "password": "$2b$10$qIEhmPhLOP7m1ZpwrexiFOEAbtvxXGd82BB4tZ5tASYuWRb3NAofi"
+  },
+  {
+    "id": 1728703606352,
+    "email": "testing@test.com",
+    "username": "starr",
+    "password": "$2b$10$GqXGNCz6GXZFUmu/133KweFuSmmv3Zs/xo7dYDuNAhiSHQtO9CNNa"
   }
 ]

@@ -6,6 +6,7 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const fs = require("fs");
 const cookieParser = require("cookie-parser");
+const livereload = require("connect-livereload");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -15,6 +16,7 @@ app.use(express.static(path.join(__dirname, "public"))); // Serve static files f
 app.use(express.json()); // Add middleware to parse JSON bodies
 app.use(express.urlencoded({ extended: true })); // Add middleware to parse URL-encoded bodies
 app.use(cookieParser()); // Add middleware to parse cookies
+app.use(livereload()); // Include connect-livereload middleware
 
 app.set("view engine", "ejs");
 app.set("views", "frontend");
@@ -26,15 +28,22 @@ if (!SECRET_KEY) {
 	process.exit(1);
 }
 
+//GET
 app.get("/", function (req, res) {
 	const allPosts = [];
 	for (let category of data) {
-		for (let post of category.posts) {
-			allPosts.push(post);
+		for (let post of category?.posts) {
+			allPosts?.push(post);
 		}
 	}
-	res.render("index.ejs", { allPosts });
+	// Sort posts by date descending and select the top 3 as recent posts
+	const recentPosts = allPosts
+		.sort((a, b) => new Date(b.date) - new Date(a.date))
+		.slice(0, 3);
+
+	res.render("index.ejs", { allPosts, recentPosts });
 });
+
 app.get("/signin", function (req, res) {
 	res.render("signin.ejs");
 });
@@ -43,6 +52,7 @@ app.get("/post", function (req, res) {
 	res.render("post.ejs");
 });
 
+//POST
 app.get("/signup", (req, res) => {
 	try {
 		res.render("signup", {
@@ -52,7 +62,7 @@ app.get("/signup", (req, res) => {
 		});
 	} catch (error) {
 		console.error("Error rendering signup page:", error);
-		res.status(500).send("An error occurred while loading the signup page");
+		res?.status(500)?.send("An error occurred while loading the signup page");
 	}
 });
 
@@ -61,28 +71,28 @@ app.post("/signup", async (req, res) => {
 
 	// Basic validation
 	if (!email || !username || !password || !confirmPassword) {
-		return res.status(400).send("All fields are required.");
+		return res?.status(400)?.send("All fields are required.");
 	}
 
 	if (password !== confirmPassword) {
-		return res.status(400).send("Passwords do not match.");
+		return res?.status(400)?.send("Passwords do not match.");
 	}
 
 	// Load existing users
-	const usersFile = path.join(__dirname, "database", "users.json");
+	const usersFile = path?.join(__dirname, "database", "users.json");
 	let users = [];
 
 	if (fs.existsSync(usersFile)) {
-		const data = fs.readFileSync(usersFile);
+		const data = fs?.readFileSync(usersFile);
 		console.log({ data });
 
-		users = JSON.parse(data);
+		users = JSON?.parse(data);
 		console.log({ users });
 	}
 
 	// Check if user already exists
-	const userExists = users.find(
-		(user) => user.email === email || user.username === username
+	const userExists = users?.find(
+		(user) => user?.email === email || user?.username === username
 	);
 
 	if (userExists) {
@@ -90,7 +100,7 @@ app.post("/signup", async (req, res) => {
 	}
 
 	// Hash password
-	const hashedPassword = await bcrypt.hash(password, 10);
+	const hashedPassword = await bcrypt?.hash(password, 10);
 
 	// Create new user
 	const newUser = {
@@ -106,7 +116,7 @@ app.post("/signup", async (req, res) => {
 	fs.writeFileSync(usersFile, JSON.stringify(users, null, 2));
 
 	// Generate JWT
-	const token = jwt.sign({ id: newUser.id }, SECRET_KEY, { expiresIn: "1h" });
+	const token = jwt.sign({ id: newUser?.id }, SECRET_KEY, { expiresIn: "48h" });
 
 	// Send token as JSON response
 	res.json({ message: "User registered successfully.", token });
@@ -141,7 +151,7 @@ app.post("/signin", async (req, res) => {
 	}
 
 	// Generate JWT
-	const token = jwt.sign({ id: user.id }, SECRET_KEY, { expiresIn: "1h" });
+	const token = jwt.sign({ id: user.id }, SECRET_KEY, { expiresIn: "48h" });
 
 	// Optionally, set the token in a cookie or send it in the response
 	const loginAuth = res.json({ message: "Signed in successfully.", token });
