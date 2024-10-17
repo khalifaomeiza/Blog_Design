@@ -156,3 +156,129 @@ document.addEventListener("DOMContentLoaded", () => {
 		}
 	});
 });
+
+// Toastr Configuration (optional)
+document.addEventListener("DOMContentLoaded", function () {
+	// Toastr Configuration (optional)
+	toastr.options = {
+		closeButton: true,
+		progressBar: true,
+		positionClass: "toast-top-right",
+		timeOut: "5000"
+	};
+
+	// Handle Signup Form Submission
+	const signupForm = document.getElementById("signupForm");
+	if (signupForm) {
+		signupForm.addEventListener("submit", function (e) {
+			e.preventDefault(); // Prevent default form submission
+
+			const formData = {
+				email: document.getElementById("email").value,
+				username: document.getElementById("username").value,
+				password: document.getElementById("password").value,
+				confirmPassword: document.getElementById("confirmPassword").value
+			};
+
+			fetch("/signup", {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json"
+				},
+				body: JSON.stringify(formData)
+			})
+				.then((response) => {
+					if (!response.ok) {
+						return response.json().then((errorData) => {
+							throw errorData; // Throw an error to be caught in the catch block
+						});
+					}
+					return response.json(); // Parse JSON response
+				})
+				.then((data) => {
+					toastr.success(data.message);
+					// Optionally, redirect or reset form
+					window.location.href = "/";
+				})
+				.catch((error) => {
+					if (error.errors) {
+						error.errors.forEach((err) => {
+							toastr.error(err.msg);
+						});
+					} else if (error.error) {
+						toastr.error(error.error);
+					} else {
+						toastr.error("An unknown error occurred.");
+					}
+				});
+		});
+	}
+
+	// Handle Signin Form Submission
+	const signinForm = document.getElementById("signinForm");
+	if (signinForm) {
+		signinForm.addEventListener("submit", function (e) {
+			e.preventDefault(); // Prevent default form submission
+
+			const formData = {
+				email: document.getElementById("email").value,
+				password: document.getElementById("password").value
+			};
+
+			console.log(formData, "FormData");
+
+			fetch("/signin", {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json"
+				},
+				body: JSON.stringify(formData)
+			})
+				.then((response) => {
+					if (!response.ok) {
+						return response.json().then((errorData) => {
+							throw errorData; // Throw an error to be caught in the catch block
+						});
+					}
+					return response.json(); // Parse JSON response
+				})
+				.then((data) => {
+					toastr.success(data.message);
+					// Optionally, redirect
+					window.location.href = "/";
+				})
+				.catch((error) => {
+					if (error.errors) {
+						error.errors.forEach((err) => {
+							toastr.error(err.msg);
+						});
+					} else if (error.error) {
+						toastr.error(error.error);
+					} else {
+						toastr.error("An unknown error occurred.");
+					}
+				});
+		});
+	}
+});
+
+// logout.js
+
+document.getElementById("logoutButton").addEventListener("click", function () {
+	// Make a POST request to the logout route
+	fetch("/logout", {
+		method: "POST",
+		credentials: "include" // Include cookies in the request
+	})
+		.then((response) => {
+			if (response.ok) {
+				// Redirect to home or login page after successful logout
+				window.location.href = "/"; // Change this to your desired redirect URL
+			} else {
+				alert("Logout failed. Please try again.");
+			}
+		})
+		.catch((error) => {
+			console.error("Error during logout:", error);
+		});
+});

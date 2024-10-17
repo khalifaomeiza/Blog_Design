@@ -1,0 +1,75 @@
+body{
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+#logout-modal {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 25% auto;
+}
+.modal {
+	display: flex; /* Use flexbox to center the modal */
+	justify-content: center; /* Center horizontally */
+	align-items: center; /* Center vertically */
+	position: fixed; /* Fixed position to cover the entire screen */
+	top: 0;
+	left: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+	z-index: 1000; /* High z-index to stay above other content */
+	margin: O auto;
+}
+
+/* Styles for the modal content */
+.modal-content {
+	background: #ffffff; /* White background for the modal content */
+	padding: 20px; /* Padding around the content */
+	border-radius: 8px; /* Rounded corners */
+	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+	text-align: center; /* Center text */
+	width: 300px; /* Fixed width for the modal */
+}
+
+/* Heading style for modal */
+.modal-content h2 {
+	margin: 0; /* Remove default margin */
+	font-size: 20px; /* Font size for the heading */
+	color: #333; /* Dark gray color */
+}
+
+/* Paragraph style */
+.modal-content p {
+	margin: 10px 0 20px; /* Margin around the paragraph */
+	color: #555; /* Gray color for the paragraph text */
+}
+
+/* Button styles */
+.modal-content button {
+	background-color: #d9534f; /* Red background for the confirm button */
+	color: white; /* White text color */
+	border: none; /* Remove default border */
+	padding: 10px 15px; /* Padding inside the button */
+	border-radius: 5px; /* Rounded button corners */
+	font-size: 16px; /* Font size for button text */
+	cursor: pointer; /* Pointer cursor on hover */
+	margin: 5px; /* Margin between buttons */
+	transition: background-color 0.3s; /* Smooth transition for background color */
+}
+
+/* Confirm button hover effect */
+.modal-content button#confirmLogout:hover {
+	background-color: #c9302c; /* Darker red on hover */
+}
+
+/* Cancel button styles */
+.modal-content button#cancelLogout {
+	background-color: #f0ad4e; /* Bootstrap Warning Color (Orange) */
+}
+
+/* Cancel button hover effect */
+.modal-content button#cancelLogout:hover {
+	background-color: #ec971f; /* Darker orange on hover */
+}

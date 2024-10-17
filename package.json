@@ -6,7 +6,8 @@
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"start": "node server.js",
-		"dev": "concurrently \"nodemon server.js\" \"node livereload.js\""
+		"dev": "concurrently \"nodemon server.js\" \"node livereload.js\"",
+		"lint": "eslint ."
 	},
 	"repository": {
 		"type": "git",
@@ -23,16 +24,25 @@
 		"bcrypt": "^5.1.1",
 		"body-parser": "^1.20.3",
 		"cookie-parser": "^1.4.6",
-		"dotenv": "^16.4.5",
+		"dotenv-safe": "^9.1.0",
 		"ejs": "^3.1.10",
 		"express": "^4.21.0",
+		"express-rate-limit": "^7.4.1",
+		"express-session": "^1.18.1",
+		"express-validator": "^7.2.0",
+		"helmet": "^8.0.0",
 		"jsonwebtoken": "^9.0.2",
+		"morgan": "^1.10.0",
 		"path": "^0.12.7",
+		"toastr": "^2.1.4",
 		"yup": "^1.4.0"
 	},
 	"devDependencies": {
+		"@eslint/js": "^9.12.0",
 		"concurrently": "^9.0.1",
 		"connect-livereload": "^0.6.1",
+		"eslint": "^9.12.0",
+		"globals": "^15.11.0",
 		"livereload": "^0.9.3",
 		"nodemon": "^3.1.7"
 	}

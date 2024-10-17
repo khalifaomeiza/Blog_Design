@@ -22,5 +22,23 @@
     "email": "testing@test.com",
     "username": "starr",
     "password": "$2b$10$GqXGNCz6GXZFUmu/133KweFuSmmv3Zs/xo7dYDuNAhiSHQtO9CNNa"
+  },
+  {
+    "id": 1729133563907,
+    "email": "test22@test.com",
+    "username": "test22",
+    "password": "$2b$10$AqFEH75H1gI.P8vhTBb7ju6Ceaa9DcZB68zjNdNbhiFaZjHvUjnMK"
+  },
+  {
+    "id": 1729133878355,
+    "email": "test222@test.com",
+    "username": "test222",
+    "password": "$2b$10$EnEbt3smmlLHvVUvGpcKzOkuLHsStqrTODYgstXkM09F9St8IdtrC"
+  },
+  {
+    "id": 1729133994221,
+    "email": "test2222@test.com",
+    "username": "test2222",
+    "password": "$2b$10$kHuGQyag519di0xqvGdiQe6hyoVSyrldX0hIhI.//xPoH7MSOykwK"
   }
 ]
